@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
         PortfolioApplication
       </h1>
@@ -9,13 +8,9 @@
         # PortfolioApplication
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
+        <div style="padding-bottom: 20px;">
+          <svg-icon name="ufo" title="my icon" width="120" height="120" />
+        </div>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
@@ -29,12 +24,9 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  }
+  components: {}
 }
 </script>
 

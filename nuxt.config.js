@@ -23,7 +23,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    '@assets/scss/style.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -35,8 +35,7 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+
   ],
   /*
   ** Nuxt.js modules
@@ -44,8 +43,17 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/svg-sprite',
   ],
+  /*
+ ** svgSprite module configuration
+ ** See https://www.npmjs.com/package/@nuxtjs/svg-sprite
+ */
+  svgSprite: {
+    input: '~/assets/icons',
+    output: '~/assets/icons-gen'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
