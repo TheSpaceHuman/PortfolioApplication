@@ -37,6 +37,7 @@
 
       </div>
       <el-menu :default-active="activeItem" class="main-menu__items" mode="horizontal" v-else>
+        <nuxt-link to="/" class="main-menu__item-logo"><svg-icon name="moon"></svg-icon></nuxt-link>
         <el-menu-item
           class="main-menu__item"
           v-for="item in items"
@@ -115,11 +116,24 @@
       justify-content: center;
       border-color: transparent;
     }
-    &__item-link {
-      display: flex;
-      align-items: center;
+    &__item {
+      &-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      &-logo {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        svg {
+          margin: 0 20px;
+          width: 40px;
+          height: 40px;
+          fill: $secondary-color;
+        }
+      }
     }
-
     &__mobile-items {
       max-width: 320px;
       font-size: 21px;
