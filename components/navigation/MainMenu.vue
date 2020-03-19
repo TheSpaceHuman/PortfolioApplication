@@ -30,19 +30,20 @@
               :key="key"
               @click="hideMobileMenu"
             >
-              <nuxt-link :to="item.link" class="main-menu__mobile-link"><el-icon v-if="item.icon" :type="item.icon" /> {{item.name}}</nuxt-link>
+              <nuxt-link :to="item.link" class="main-menu__mobile-link"><i v-if="item.icon" :class="item.icon" /> {{item.name}}</nuxt-link>
             </li>
           </ul>
         </transition>
 
       </div>
-      <el-menu v-model="activeItem" mode="horizontal" class="main-menu__items" v-else>
+      <el-menu :default-active="activeItem" class="main-menu__items" mode="horizontal" v-else>
         <el-menu-item
           class="main-menu__item"
           v-for="item in items"
           :key="item.key"
+          :index="item.key"
         >
-          <nuxt-link :to="item.link"><el-icon v-if="item.icon" :type="item.icon" /> {{item.name}}</nuxt-link>
+          <nuxt-link :to="item.link" class="main-menu__item-link"><i v-if="item.icon" :class="item.icon" />{{item.name}}</nuxt-link>
         </el-menu-item>
       </el-menu>
     </nav>
@@ -63,7 +64,7 @@
     },
     data() {
       return {
-        activeItem: [],
+        activeItem: '1',
         activeHamburger: false,
 
       }
@@ -74,7 +75,7 @@
           return el.link === this.$route.path
         });
         if(currentPage.length) {
-          this.activeItem =  [currentPage[0].key]
+          this.activeItem =  currentPage[0].key
         } else {
           this.activeItem =  [this.items[0].key]
         }
@@ -101,7 +102,7 @@
 </script>
 
 <style lang="scss">
-  @import "./../../assets/scss/utils/vars";
+  @import "@/assets/scss/utils/vars";
 
   .main-menu {
     a {
@@ -110,9 +111,14 @@
     }
 
     &__items {
+      display: flex;
+      justify-content: center;
       border-color: transparent;
     }
-    &__item {}
+    &__item-link {
+      display: flex;
+      align-items: center;
+    }
 
     &__mobile-items {
       max-width: 320px;
@@ -123,8 +129,9 @@
       top: 0;
       bottom: 0;
       padding: 45px 30px;
-      background-color: $primary-color;
-      color: $secondary-color;
+      background-color:  $secondary-color;
+      color: $tertiary-color;
+      z-index: 999;
     }
     &__mobile-wrapper {
       display: flex;
@@ -144,14 +151,14 @@
     }
 
     &__mobile-item {
-      border-bottom: 1px solid transparent;
+      /*border-bottom: 1px solid transparent;*/
       margin-bottom: 12px;
       &.is-active {
-        color: $danger-color;
-        border-color: $danger-color;
+        color: $primary-color;
+        border-color: $primary-color;
       }
       &:hover {
-        color: $danger-color;
+        color: $primary-color;
       }
     }
 

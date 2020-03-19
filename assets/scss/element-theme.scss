@@ -1,5 +1,25 @@
-/* theme color */
-$--color-primary: teal;
+// Brand Color
+$--color-primary: $primary-color;
+// Functional Color
+$--color-success: $success-color;
+$--color-warning: $warning-color;
+$--color-danger: $danger-color;
+$--color-info: $info-color;
+// Font Color
+$--color-text-primary: $text-primary-color;
+$--color-text-regular: $text-regular-color;
+$--color-text-secondary: $text-secondary-color;
+$--color-text-placeholder: $text-placeholder-color;
+// Border Color
+$--border-color-base: $border-base-color;
+$--border-color-light: $border-light-color;
+$--border-color-lighter: $border-lighter-color;
+$--border-color-extra-light: $border-extra-light-color;
+// Background Color
+$--color-white: $fon-white-color ;
+$--color-black: $fon-black-color;
+$--background-color-base: $fon-color-base;
+
 
 /* icon font path, required */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';

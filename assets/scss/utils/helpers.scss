@@ -57,13 +57,13 @@ $spaceamounts: (10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 90, 100);
   color: $danger-color;
 }
 .color--black {
-  color: #000;
+  color: $danger-color;
 }
 .color--white {
-  color: #fff;
+  color: $light-color;
 }
 ::placeholder {
-  color: $neutral-placeholder;
+  color: $text-placeholder-color;
 }
 
 .d-block {
