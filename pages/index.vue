@@ -4,6 +4,7 @@
       <div class="page-index__block-1 my-50">
         <p class="h5 text-center">Welcome</p>
         <h2 class="h2 text-center">I'm Artem - frontend developer</h2>
+        <p class="h3 text-center">I am {{ new Date().getFullYear() - 1997 }} years old, I live in Moscow and I really love my job</p>
         <div class="d-flex justify-content-center p-20">
           <svg-icon name="planet" width="250px" height="250px"></svg-icon>
         </div>
@@ -20,6 +21,9 @@
     <section class="p-50 page-index__block-3">
       <GitHubRepositories />
     </section>
+    <section class="p-50 page-index__block-4">
+      <MainForm title="Personal Feedback" :fields="fields" buttonTitle="Send" actionPath="/"/>
+    </section>
   </section>
 
 </template>
@@ -28,16 +32,37 @@
 import TheBanner from "~/components/base/TheBanner";
 import TechnologyCard from "~/components/base/TechnologyCard.vue";
 import GitHubRepositories from "~/components/base/GitHubRepositories.vue";
+import MainForm from "~/components/forms/MainForm.vue";
 export default {
   components: {
-    TheBanner, TechnologyCard, GitHubRepositories
+    TheBanner, TechnologyCard, GitHubRepositories, MainForm
+  },
+  data() {
+    return {
+      fields: [
+        {label: 'Name', name: 'name', mask: '', placeholder: 'Name', type: 'text', required: true},
+        {label: 'Email', name: 'email', mask: '', placeholder: 'Email', type: 'email', required: true},
+        {label: 'Phone', name: 'phone', mask: '+7 (###) ###-##-##', placeholder: 'Phone', type: 'text'}
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss">
+  @import "../assets/scss/utils/vars";
   .page-index {
 
     &__block-1 {}
+    &__block-4 {
+      display: flex;
+      justify-content: center;
+      .main-form {
+        max-width: 700px;
+        border: 1px solid $primary-color;
+        border-radius: 15px;
+        padding: 15px;
+      }
+    }
   }
 </style>

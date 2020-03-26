@@ -1,9 +1,10 @@
 <template>
     <section
+      v-loading="loading"
       class="github-repositories"
     >
       <h3 class="github-repositories__title h3 text-center mb-40"> <a :href="CONTACTS.github" target="_blank" class="github-link"><svg-icon name="github" width="30px" height="30px" style="margin-bottom: 5px;"></svg-icon></a> TheSpaceHuman</h3>
-      <el-row v-loading="loading" class="github-repositories__list">
+      <el-row  class="github-repositories__list">
         <el-col :sm="24" :md="12" :lg="8" v-for="rep in showRepositories" :key="rep.id" class="p-10">
           <a :href="rep.link" target="_blank">
             <el-card shadow="hover" class="github-repositories__card">
@@ -76,7 +77,7 @@
       }
     },
     mounted() {
-      this.getRepositories();
+      // this.getRepositories();
     }
   }
 </script>

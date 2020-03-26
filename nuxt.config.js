@@ -31,6 +31,11 @@ export default {
   plugins: [
     '@plugins/element-ui',
     '@plugins/vue-moment',
+    '@plugins/vue2-filters',
+    '@plugins/vue-lazyload',
+    '@plugins/vue-scrollto',
+    '@plugins/vue-the-mask',
+    '@plugins/vuelidate',
   ],
   /*
   ** Nuxt.js dev-modules
