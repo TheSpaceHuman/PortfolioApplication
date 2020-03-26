@@ -22,14 +22,14 @@
       <GitHubRepositories />
     </section>
     <section class="p-50 page-index__block-4">
-      <MainForm title="Personal Feedback" :fields="fields" buttonTitle="Send" actionPath="/"/>
+      <MainForm title="Personal feedback" :fields="fields" buttonTitle="Send" path="/"/>
     </section>
   </section>
 
 </template>
 
 <script>
-import TheBanner from "~/components/base/TheBanner";
+import TheBanner from "~/components/base/TheBanner.vue";
 import TechnologyCard from "~/components/base/TechnologyCard.vue";
 import GitHubRepositories from "~/components/base/GitHubRepositories.vue";
 import MainForm from "~/components/forms/MainForm.vue";

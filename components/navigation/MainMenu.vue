@@ -73,12 +73,13 @@
     methods: {
       initMenu() {
         const currentPage = this.items.filter(el => {
+          // return el.link.includes(this.$route.path)
           return el.link === this.$route.path
         });
         if(currentPage.length) {
-          this.activeItem =  currentPage[0].key
+          this.activeItem = currentPage[0].key
         } else {
-          this.activeItem =  [this.items[0].key]
+          this.activeItem = [this.items[0].key]
         }
       },
       toggleHamburger() {
@@ -104,7 +105,9 @@
 
 <style lang="scss">
   @import "@/assets/scss/utils/vars";
-
+  .hamburger {
+    z-index: 6;
+  }
   .main-menu {
     a {
       font-size: inherit;
@@ -160,7 +163,7 @@
         left: 0;
         right: 0;
         background-color: rgba(0,0,0,0.5);
-        z-index: -1;
+        z-index: 5;
       }
     }
 

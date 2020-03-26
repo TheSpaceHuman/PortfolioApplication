@@ -20,6 +20,36 @@ export const state = () => ({
     { name: 'TypeScript', image: '/image/tehnologyies/typescript-1174965.png', href: 'https://www.typescriptlang.org/' },
     { name: 'Rxjs', image: '/image/tehnologyies/9c457d62-d50f-4832-b810-0acda322755c.png', href: 'https://rxjs-dev.firebaseapp.com/' },
     { name: 'Svelte', image: '/image/tehnologyies/1200px-Svelte_Logo.svg.png', href: 'https://svelte.dev/' },
+  ],
+  projects: [
+    {
+      id: '1',
+      title: 'Homeartidea',
+      description: 'Description homeartidea',
+      promo: '/image/projects/HA1.jpg',
+      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+    },
+    {
+      id: '2',
+      title: 'Homeartidea',
+      description: 'Description homeartidea',
+      promo: '/image/projects/HA1.jpg',
+      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+    },
+    {
+      id: '3',
+      title: 'Homeartidea',
+      description: 'Description homeartidea',
+      promo: '/image/projects/HA1.jpg',
+      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+    },
+    {
+      id: '4',
+      title: 'Homeartidea',
+      description: 'Description homeartidea',
+      promo: '/image/projects/HA1.jpg',
+      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+    }
   ]
 })
 
@@ -28,6 +58,10 @@ export const mutations = {
 }
 
 export const getters = {
-  menu:(state) => state.menu,
-  technologies:(state) => state.technologies
+  menu: (state) => state.menu,
+  technologies: (state) => state.technologies,
+  projects: (state) => state.projects,
+  getProjectById: state => id => {
+    return state.projects.find((el) => el.id === id)
+  }
 }
