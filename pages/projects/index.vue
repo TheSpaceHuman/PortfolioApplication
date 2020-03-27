@@ -12,12 +12,18 @@
               <nuxt-link
                 :to="{ name: 'projects-id', params: {id: project.id} }">
                 <el-card shadow="hover" class="project-card">
-                  <img :src="project.promo" :alt="project.title" />
+                  <img :src="project.promo" :alt="project.title" class="project-card__image" />
                   <h4 class="project-card__title">{{project.title}}</h4>
+                  <div class="project-card__technologies">
+                    <TechnologiesTags :items="project.technologies" />
+                  </div>
                 </el-card>
               </nuxt-link>
             </el-col>
           </el-row>
+        </section>
+        <section class="commerce-feedback py-30">
+          <MainForm  title="Commerce feedback" :fields="fields" buttonTitle="Submit an order for review" path="/" />
         </section>
       </div>
     </section>
@@ -25,13 +31,30 @@
 
 <script>
   import { mapGetters } from 'vuex';
+  import TechnologiesTags from '~/components/base/TechnologiesTags.vue';
+  import MainForm from "~/components/forms/MainForm.vue";
   export default {
     name: "Projects",
+    components: {
+      TechnologiesTags, MainForm
+    },
     computed: {
       ...mapGetters([
         'projects'
       ])
-    }
+    },
+     data() {
+      return {
+        fields: [
+          {label: 'Name', name: 'name', placeholder: 'Name', type: 'text', required: true, grid: {xs: 24, md: 12, lg: 12 }},
+          {label: 'Email', name: 'email', placeholder: 'Email', type: 'email', required: true, grid: {xs: 24, md: 12, lg: 12 }},
+          {label: 'Phone', name: 'phone', placeholder: 'Phone', type: 'tel', grid: {xs: 24, md: 12, lg: 12 }},
+          {label: 'Type project', name: 'type', placeholder: 'Type project', type: 'select', required: true, options: [{label: 'Commercial project', value: '1'}, { label: 'Personal project', value: '2'}], grid: {xs: 24, md: 12, lg: 12 }},
+          {label: 'Technical task', name: 'task', type: 'file', grid: {xs: 24, md: 24, lg: 24 }},
+          {label: 'Comment', name: 'comment', placeholder: 'Comment', type: 'textarea', autosize:{ minRows: 5, maxRows: 15}, required: true, grid: {xs: 24, md: 24, lg: 24 }}
+        ]
+      }
+     }
   }
 </script>
 
@@ -44,5 +67,12 @@
       font-weight: 400;
       color: $primary-color;
     }
+    &__image {
+      height: 250px;
+    }
+  }
+  .commerce-feedback {
+    display: flex;
+    justify-content: center;
   }
 </style>

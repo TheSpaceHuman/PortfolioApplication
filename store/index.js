@@ -25,30 +25,26 @@ export const state = () => ({
     {
       id: '1',
       title: 'Homeartidea',
-      description: 'Description homeartidea',
+      description: 'Interior design studio',
       promo: '/image/projects/HA1.jpg',
-      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg'],
+      technologies: ['javascript', 'php', 'laravel']
     },
     {
       id: '2',
-      title: 'Homeartidea',
-      description: 'Description homeartidea',
-      promo: '/image/projects/HA1.jpg',
-      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+      title: 'CRM for z-clinic',
+      description: 'CRM for internal use, staff training and the establishment of business processes of the system',
+      promo: '/image/projects/CZ2.jpg',
+      images: ['/image/projects/CZ1.jpg', '/image/projects/CZ2.jpg', '/image/projects/CZ3.jpg', '/image/projects/CZ4.jpg', '/image/projects/CZ5.jpg', '/image/projects/CZ6.jpg', '/image/projects/CZ7.jpg', '/image/projects/CZ8.jpg', '/image/projects/CZ9.jpg', '/image/projects/CZ10.jpg', '/image/projects/CZ11.jpg', '/image/projects/CZ12.jpg'],
+      technologies: ['javascript', 'php', 'laravel']
     },
     {
       id: '3',
-      title: 'Homeartidea',
-      description: 'Description homeartidea',
-      promo: '/image/projects/HA1.jpg',
-      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
-    },
-    {
-      id: '4',
-      title: 'Homeartidea',
-      description: 'Description homeartidea',
-      promo: '/image/projects/HA1.jpg',
-      images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg']
+      title: 'MirDit',
+      description: 'The main site of the company IT Data World',
+      promo: '/image/projects/MD1.jpg',
+      images: ['/image/projects/MD1.jpg', '/image/projects/MD2.jpg', '/image/projects/MD3.jpg', '/image/projects/MD4.jpg', '/image/projects/MD5.jpg'],
+      technologies: ['javascript', 'php', 'vuejs']
     }
   ]
 })

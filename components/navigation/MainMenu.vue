@@ -73,13 +73,12 @@
     methods: {
       initMenu() {
         const currentPage = this.items.filter(el => {
-          // return el.link.includes(this.$route.path)
           return el.link === this.$route.path
         });
         if(currentPage.length) {
           this.activeItem = currentPage[0].key
         } else {
-          this.activeItem = [this.items[0].key]
+         this.switchActiveRoute()
         }
       },
       toggleHamburger() {
@@ -87,9 +86,25 @@
       },
       hideMobileMenu() {
         this.activeHamburger = false
+      },
+      switchActiveRoute() {
+        switch (this.$route.name) {
+          case 'projects-id':
+            this.activeItem = this.items.find((el) => {
+              return el.link === '/projects'
+            }).key
+            break;
+          case 'blog-id':
+            this.activeItem = this.items.find((el) => {
+              return el.link === '/blog'
+            }).key
+            break;
+          default:
+            this.activeItem = '1'
+        }
       }
     },
-    created() {
+    mounted() {
       this.initMenu();
     },
     watch: {

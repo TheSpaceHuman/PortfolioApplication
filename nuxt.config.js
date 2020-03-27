@@ -23,7 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@assets/scss/style.scss'
+    '@assets/scss/style.scss',
+    '@node_modules/vue-phone-number-input/dist/vue-phone-number-input.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -36,6 +37,7 @@ export default {
     '@plugins/vue-scrollto',
     '@plugins/vue-the-mask',
     '@plugins/vuelidate',
+    '@plugins/vue-phone-number-input',
   ],
   /*
   ** Nuxt.js dev-modules

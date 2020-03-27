@@ -3,10 +3,20 @@
       <h4 class="h4 color--primary  text-center mb-30" v-if="title">{{title}}</h4>
       <el-form :model="form" :rules="rules" ref="form">
         <el-row :gutter="15">
-          <el-col :xs="24" :sm="24" :md="24 / col" :lg="24 /col" class="mb-15" v-for="field in fields" :key="field.name">
+          <el-col :xs="field.grid ? field.grid.xs : 24" :sm="field.grid ? field.grid.sm : 24" :md="field.grid ? field.grid.md : 24" :lg="field.grid ? field.grid.lg : 24" class="mb-15" v-for="field in fields" :key="field.name">
             <el-form-item :label="field.label" :prop="field.name">
-              <el-input v-if="field.mask" :placeholder="field.placeholder" :type="field.text" :id="field.name" v-model="form[field.name]" v-mask="field.mask" />
-              <el-input v-else :placeholder="field.placeholder" :type="field.text" :id="field.name" v-model="form[field.name]" />
+              <el-input v-if="field.mask" :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" v-mask="field.mask" />
+              <vue-phone-number-input v-model="form[field.name]"  v-else-if="field.type === 'tel'"></vue-phone-number-input>
+              <el-select  v-else-if="field.type === 'select'" v-model="form[field.name]" :placeholder="field.placeholder" class="w-100">
+                <el-option
+                  v-for="item in field.options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+              <TheUploader v-else-if="field.type === 'file'" />
+              <el-input v-else :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" :autosize="field.autosize" />
             </el-form-item>
           </el-col>
         </el-row>
@@ -19,18 +29,18 @@
 
 <script>
   import CONTACT from  '~/dictionary/contact'
+  import TheUploader from "../base/TheUploader";
 
   export default {
     name: "MainForm",
+    components: {
+      TheUploader
+    },
     props: {
       title: String,
       fields: {
         type: Array,
         required: true,
-      },
-      col: {
-        type: Number,
-        default: 1,
       },
       buttonTitle: {
         type: String,
@@ -106,10 +116,39 @@
 </script>
 
 <style lang="scss">
+  @import "assets/scss/utils/vars";
   .main-form {
+    max-width: 700px;
+    border: 1px solid $primary-color;
+    border-radius: 15px;
+    padding: 15px;
     .form-label {
       display: inline-block;
       margin-bottom: 8px;
     }
+  }
+  .el-form-item__label {
+    display: block;
+    text-align: left;
+    float: unset;
+  }
+  // change vue-phone-number-input
+  .country-selector__label {
+    display: none;
+  }
+  .input-tel__label {
+    line-height: 11px;
+  }
+  .has-list-open .country-selector__toggle {
+    top: calc(50% - 4px)!important;
+  }
+  .country-selector__toggle {
+    top: calc(50% - 20px)!important;
+  }
+  .country-selector__input {
+    padding-top: 4px!important;
+  }
+  .country-selector__country-flag {
+    top: 14px!important;
   }
 </style>

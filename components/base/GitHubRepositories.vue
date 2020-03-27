@@ -77,7 +77,7 @@
       }
     },
     mounted() {
-      // this.getRepositories();
+      this.getRepositories();
     }
   }
 </script>

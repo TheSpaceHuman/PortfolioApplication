@@ -42,7 +42,8 @@ export default {
       fields: [
         {label: 'Name', name: 'name', mask: '', placeholder: 'Name', type: 'text', required: true},
         {label: 'Email', name: 'email', mask: '', placeholder: 'Email', type: 'email', required: true},
-        {label: 'Phone', name: 'phone', mask: '+7 (###) ###-##-##', placeholder: 'Phone', type: 'text'}
+        {label: 'Phone', name: 'phone', placeholder: 'Phone', type: 'tel'},
+        {label: 'Message', name: 'message', mask: '', placeholder: 'Message', type: 'textarea', autosize:{ minRows: 5, maxRows: 15}, required: true}
       ]
     }
   }
@@ -57,12 +58,6 @@ export default {
     &__block-4 {
       display: flex;
       justify-content: center;
-      .main-form {
-        max-width: 700px;
-        border: 1px solid $primary-color;
-        border-radius: 15px;
-        padding: 15px;
-      }
     }
   }
 </style>
