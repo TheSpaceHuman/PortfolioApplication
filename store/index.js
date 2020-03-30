@@ -5,7 +5,9 @@ export const state = () => ({
     { name: 'Demo', link: '/demo', key: '3', icon: 'el-icon-data-board' },
     { name: 'Components', link: '/components', key: '4', icon: 'el-icon-menu' },
     { name: 'Blog', link: '/blog', key: '5', icon: 'el-icon-postcard' },
-    { name: 'Profile', link: '/profile', key: '6', icon: 'el-icon-user' }
+    { name: 'Tools', link: '/tools', key: '6', icon: 'el-icon-s-tools' },
+    { name: 'Inspiration', link: '/inspiration', key: '7', icon: 'el-icon-star-on' },
+    { name: 'Profile', link: '/profile', key: '8', icon: 'el-icon-user' }
   ],
   technologies: [
     { name: 'HTML & CSS', image: '/image/tehnologyies/1425632648_html5-css3.png', href: 'https://www.w3.org/standards/webdesign/htmlcss' },
@@ -28,7 +30,7 @@ export const state = () => ({
       description: 'Interior design studio',
       promo: '/image/projects/HA1.jpg',
       images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg'],
-      technologies: ['javascript', 'php', 'laravel']
+      technologies: ['jquery', 'laravel']
     },
     {
       id: '2',
@@ -36,7 +38,7 @@ export const state = () => ({
       description: 'CRM for internal use, staff training and the establishment of business processes of the system',
       promo: '/image/projects/CZ2.jpg',
       images: ['/image/projects/CZ1.jpg', '/image/projects/CZ2.jpg', '/image/projects/CZ3.jpg', '/image/projects/CZ4.jpg', '/image/projects/CZ5.jpg', '/image/projects/CZ6.jpg', '/image/projects/CZ7.jpg', '/image/projects/CZ8.jpg', '/image/projects/CZ9.jpg', '/image/projects/CZ10.jpg', '/image/projects/CZ11.jpg', '/image/projects/CZ12.jpg'],
-      technologies: ['javascript', 'php', 'laravel']
+      technologies: ['jquery', 'laravel']
     },
     {
       id: '3',
@@ -44,7 +46,7 @@ export const state = () => ({
       description: 'The main site of the company IT Data World',
       promo: '/image/projects/MD1.jpg',
       images: ['/image/projects/MD1.jpg', '/image/projects/MD2.jpg', '/image/projects/MD3.jpg', '/image/projects/MD4.jpg', '/image/projects/MD5.jpg'],
-      technologies: ['javascript', 'php', 'vuejs']
+      technologies: ['vuejs', 'nuxtjs', 'php']
     }
   ]
 })

@@ -6,7 +6,13 @@
           <el-col :xs="field.grid ? field.grid.xs : 24" :sm="field.grid ? field.grid.sm : 24" :md="field.grid ? field.grid.md : 24" :lg="field.grid ? field.grid.lg : 24" class="mb-15" v-for="field in fields" :key="field.name">
             <el-form-item :label="field.label" :prop="field.name">
               <el-input v-if="field.mask" :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" v-mask="field.mask" />
-              <vue-phone-number-input v-model="form[field.name]"  v-else-if="field.type === 'tel'"></vue-phone-number-input>
+              <vue-phone-number-input
+                v-model="form[field.name]"  v-else-if="field.type === 'tel'"
+                color="#00e0a1"
+                valid-color="#26df82"
+                error-color="#ec3532"
+                :only-countries="countries"
+              ></vue-phone-number-input>
               <el-select  v-else-if="field.type === 'select'" v-model="form[field.name]" :placeholder="field.placeholder" class="w-100">
                 <el-option
                   v-for="item in field.options"
@@ -70,7 +76,7 @@
           'justify-content-start': this.buttonAlight === 'left',
           'justify-content-end': this.buttonAlight === 'right',
         },
-        validate: false
+        countries: ['RU', 'UA', 'KZ', 'BY']
       }
     },
     created() {
@@ -88,14 +94,14 @@
         if (field.required) {
           result.push({
             required: true,
-            message: 'Field required',
-            trigger: 'blur'
+            message: 'Please enter a value, this field is required',
+            trigger: field.type === 'select' ? 'change' : 'blur'
           })
         }
         if (field.type === 'email') {
           result.push({
             type: 'email',
-            message: 'It is not email',
+            message: 'Please enter your email address in format: yourname@example.com',
             trigger: 'blur'
           })
         }
@@ -103,11 +109,12 @@
       },
       submit() {
         this.$refs.form.validate((valid) => {
+          console.debug({...this.form});
           if (valid) {
-            this.$message.success('Message sent');
+            this.$message.success('Your message has been sent successfully');
             this.$refs.form.resetFields();
           } else {
-            this.$message.error('Form invalid')
+            this.$message.error('The form is not valid. Please check the form')
           }
         });
       }
@@ -151,4 +158,15 @@
   .country-selector__country-flag {
     top: 14px!important;
   }
+  /*.input-tel__input:hover {
+    border: 1px solid $primary-color!important;
+  }
+  .input-tel__input:focus {
+    border-color: $primary-color!important;
+    box-shadow: 0 0 0 .125rem $primary-color!important;
+  }
+  .country-selector__input:focus {
+    border-color: $primary-color!important;
+    box-shadow: 0 0 0 .125rem $primary-color!important;
+  }*/
 </style>

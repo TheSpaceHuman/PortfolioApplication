@@ -2,6 +2,7 @@
     <section class="page-projects">
       <div class="container">
         <h1 class="h1 text-center py-30">Projects</h1>
+        <p class="h4 text-center">Here are all my completed projects of varying complexity.</p>
         <section class="project-list py-30">
           <el-row :gutter="15">
             <el-col :xs="24" :md="12" :lg="8" :xl="6"
@@ -34,7 +35,7 @@
   import TechnologiesTags from '~/components/base/TechnologiesTags.vue';
   import MainForm from "~/components/forms/MainForm.vue";
   export default {
-    name: "Projects",
+    name: "ProjectsPage",
     components: {
       TechnologiesTags, MainForm
     },

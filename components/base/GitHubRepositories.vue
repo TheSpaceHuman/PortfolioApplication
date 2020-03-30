@@ -57,7 +57,7 @@
         console.log('Fetch TheSpaceHuman repositories!')
       },
       getAt(number) {
-        this.showRepositories = this.repositories.slice(0, --number)
+        this.showRepositories = this.repositories.slice(0, number)
       },
       toggleShowAll() {
         if(this.showAll) {
@@ -82,22 +82,30 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   @import "../../assets/scss/utils/vars";
   .github-repositories {
+    .el-card__body {
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+    }
     &__list {
       min-height: 400px;
       padding: 20px;
     }
     &__card {
+      min-height: 200px;
+
       &-title {
         color: $primary-color;
       }
       &-date {
-        margin-top: 20px;
+        margin-top: auto;
         text-align: right;
       }
       &-description {
+        margin-top: 8px;
         color: $secondary-color;
       }
     }

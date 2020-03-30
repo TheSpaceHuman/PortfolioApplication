@@ -30,5 +30,10 @@
   .vuejs--color { color: #41B883 }
   .reactjs--color { color: #61DAFB }
   .angular--color { color: #C3002F }
+  .jquery--color { color: #0769AD }
+  .nodejs--color { color: #4D9048 }
+  .nuxtjs--color { color: #108775 }
+  .svelte--color { color: #FF3E00 }
+  .typescript--color { color: #294E80 }
 
 </style>
