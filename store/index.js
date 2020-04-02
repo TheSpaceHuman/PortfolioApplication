@@ -7,7 +7,8 @@ export const state = () => ({
     { name: 'Blog', link: '/blog', key: '5', icon: 'el-icon-postcard' },
     { name: 'Tools', link: '/tools', key: '6', icon: 'el-icon-s-tools' },
     { name: 'Inspiration', link: '/inspiration', key: '7', icon: 'el-icon-star-on' },
-    { name: 'Profile', link: '/profile', key: '8', icon: 'el-icon-user' }
+    { name: 'Work', link: '/work', key: '8', icon: 'el-icon-office-building' },
+    { name: 'Profile', link: '/profile', key: '9', icon: 'el-icon-user' }
   ],
   technologies: [
     { name: 'HTML & CSS', image: '/image/tehnologyies/1425632648_html5-css3.png', href: 'https://www.w3.org/standards/webdesign/htmlcss' },
@@ -48,6 +49,15 @@ export const state = () => ({
       images: ['/image/projects/MD1.jpg', '/image/projects/MD2.jpg', '/image/projects/MD3.jpg', '/image/projects/MD4.jpg', '/image/projects/MD5.jpg'],
       technologies: ['vuejs', 'nuxtjs', 'php']
     }
+  ],
+  tools: [
+    { title: 'SvgOmg', subTitle: 'SVG compression', image: '/image/tools/svgomg.png', link: {target: '_blank', href: 'https://jakearchibald.github.io/svgomg/'}},
+    { title: 'Squoosh', subTitle: 'Image compression', image: '/image/tools/squoosh-logo-7334C2EA69-seeklogo.com.png', link: {target: '_blank', href: 'https://squoosh.app/'}},
+    { title: 'ColorSpace', subTitle: 'Color combination', image: '/image/tools/wyVe7uLQ_400x400.jpg', link: {target: '_blank', href: 'https://mycolor.space/'}},
+    { title: 'CanIUse', subTitle: 'Browser support', image: '/image/tools/caniuse.png', link: {target: '_blank', href: 'https://caniuse.com/'}},
+    { title: 'SvgSpreact', subTitle: 'SVG sprite generation', image: '/image/tools/SvgSpreact.png', link: {target: '_blank', href: 'https://svgsprit.es/'}},
+    { title: 'Calibre', subTitle: 'Web Performance Monitoring', image: '/image/tools/dribbble_shot_hd.png', link: {target: '_blank', href: 'https://calibreapp.com/'}},
+    { title: 'WebDev', subTitle: 'Web assistant', image: '/image/tools/webdev.png', link: {target: '_blank', href: 'https://web.dev/'}},
   ]
 })
 
@@ -59,6 +69,7 @@ export const getters = {
   menu: (state) => state.menu,
   technologies: (state) => state.technologies,
   projects: (state) => state.projects,
+  tools: (state) => state.tools,
   getProjectById: state => id => {
     return state.projects.find((el) => el.id === id)
   }

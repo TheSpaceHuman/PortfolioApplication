@@ -31,7 +31,7 @@
         return this.windowScroll === 0
       },
       mobileMenu() {
-        return this.width < 900
+        return this.width < 1150
       }
     },
     created() {
