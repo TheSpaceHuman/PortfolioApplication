@@ -12,13 +12,11 @@
             >
               <nuxt-link
                 :to="{ name: 'projects-id', params: {id: project.id} }">
-                <el-card shadow="hover" class="project-card">
-                  <img :src="project.promo" :alt="project.title" class="project-card__image" />
-                  <h4 class="project-card__title">{{project.title}}</h4>
-                  <div class="project-card__technologies">
-                    <TechnologiesTags :items="project.technologies" />
-                  </div>
-                </el-card>
+                <ProjectCard
+                  :title="project.title"
+                  :image="project.promo"
+                  :technologies="project.technologies"
+                ></ProjectCard>
               </nuxt-link>
             </el-col>
           </el-row>
@@ -32,12 +30,12 @@
 
 <script>
   import { mapGetters } from 'vuex';
-  import TechnologiesTags from '~/components/base/TechnologiesTags.vue';
+  import ProjectCard from '~/components/base/ProjectCard.vue';
   import MainForm from "~/components/forms/MainForm.vue";
   export default {
     name: "ProjectsPage",
     components: {
-      TechnologiesTags, MainForm
+      ProjectCard, MainForm
     },
     computed: {
       ...mapGetters([
@@ -61,17 +59,6 @@
 
 <style scoped lang="scss">
   @import "assets/scss/utils/vars";
-  .project-card {
-    &__title {
-      margin-top: 20px;
-      font-size: 21px;
-      font-weight: 400;
-      color: $primary-color;
-    }
-    &__image {
-      height: 250px;
-    }
-  }
   .commerce-feedback {
     display: flex;
     justify-content: center;

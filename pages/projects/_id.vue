@@ -9,7 +9,7 @@
 
         <p class="project-detail__description">{{project.description}}</p>
       </div>
-      <el-carousel type="card" height="600px" class="project-detail__carousel">
+      <el-carousel type="card" height="600px" class="project-detail__carousel" :autoplay="false">
         <el-carousel-item v-for="(image, key) in project.images" :key="key">
           <img :src="image" :alt="`image-${key}`">
         </el-carousel-item>

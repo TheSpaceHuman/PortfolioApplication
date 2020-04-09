@@ -58,6 +58,9 @@ export const state = () => ({
     { title: 'SvgSpreact', subTitle: 'SVG sprite generation', image: '/image/tools/SvgSpreact.png', link: {target: '_blank', href: 'https://svgsprit.es/'}},
     { title: 'Calibre', subTitle: 'Web Performance Monitoring', image: '/image/tools/dribbble_shot_hd.png', link: {target: '_blank', href: 'https://calibreapp.com/'}},
     { title: 'WebDev', subTitle: 'Web assistant', image: '/image/tools/webdev.png', link: {target: '_blank', href: 'https://web.dev/'}},
+  ],
+  demos: [
+    { title: 'VueMicroServices', image: '/image/projects/MD1.jpg', href: 'https://github.com/TheSpaceHuman/VueMicroServices', technologies: ['vuejs', 'nuxtjs', 'laravel']  }
   ]
 })
 
@@ -72,5 +75,6 @@ export const getters = {
   tools: (state) => state.tools,
   getProjectById: state => id => {
     return state.projects.find((el) => el.id === id)
-  }
+  },
+  demos: state => state.demos
 }

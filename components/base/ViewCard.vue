@@ -67,6 +67,7 @@
     margin-top: 12px;
     color: $primary-color;
     line-height: 1;
+    text-align: center;
   }
   &__subtitle {
     margin-top: 12px;
