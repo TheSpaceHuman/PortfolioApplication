@@ -1,5 +1,6 @@
 <template>
     <section class="page-demo">
+      <img class="img-background" src="/image/login/wave.png">
       <div class="container">
         <h1 class="h1 text-center py-30">Demo</h1>
         <p class="h4 text-center">Here are demos of my personal projects created for the purpose of practice or internal tools for the company.</p>

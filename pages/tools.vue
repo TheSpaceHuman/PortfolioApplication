@@ -1,5 +1,6 @@
 <template>
   <section class="page-tools">
+    <img class="img-background" src="/image/login/wave.png">
     <div class="container">
       <h1 class="h1 text-center py-30">Tools</h1>
       <p class="h4 text-center mb-30">Here are auxiliary tools that I often use.</p>

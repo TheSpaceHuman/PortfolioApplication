@@ -22,6 +22,7 @@
                 </el-option>
               </el-select>
               <TheUploader v-else-if="field.type === 'file'" />
+              <el-input v-else-if="field.type === 'money'" :placeholder="field.placeholder" type="text" :id="field.name" v-model="form[field.name]" suffix-icon="fas fa-dollar-sign" />
               <el-input v-else :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" :autosize="field.autosize" />
             </el-form-item>
           </el-col>
@@ -64,12 +65,7 @@
     data() {
       return {
         form: {},
-        rules: {
-          name: [
-            { required: true, message: 'Please input Activity name', trigger: 'blur' },
-            { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' }
-          ]
-        },
+        rules: {},
         CONTACT,
         buttonClass: {
           'justify-content-center': this.buttonAlight === 'center',
