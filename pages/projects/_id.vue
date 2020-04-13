@@ -9,16 +9,18 @@
 
         <p class="project-detail__description">{{project.description}}</p>
       </div>
-      <el-carousel type="card" height="600px" class="project-detail__carousel" :autoplay="false">
+      <el-carousel type="card" height="600px" class="project-detail__carousel" :autoplay="false" trigger="click">
         <el-carousel-item v-for="(image, key) in project.images" :key="key">
-          <img :src="image" :alt="`image-${key}`">
+          <div class="d-flex align-items-center h-100">
+            <img :src="image" :alt="`image-${key}`">
+          </div>
         </el-carousel-item>
       </el-carousel>
     </section>
 </template>
 
 <script>
-  import BackButton from '~/components/base/BackButton.vue';
+  import BackButton from '~/components/navigation/BackButton.vue';
   export default {
     name: "ProjectDetail",
     components: {
@@ -36,7 +38,7 @@
         this.project = this.$store.getters.getProjectById(id)
         setTimeout(() => {
           this.loading = false
-        }, 1500)
+        }, 0)
       }
     },
     mounted() {

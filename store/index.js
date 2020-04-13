@@ -37,8 +37,8 @@ export const state = () => ({
       id: '2',
       title: 'CRM for z-clinic',
       description: 'CRM for internal use, staff training and the establishment of business processes of the system',
-      promo: '/image/projects/CZ2.jpg',
-      images: ['/image/projects/CZ1.jpg', '/image/projects/CZ2.jpg', '/image/projects/CZ3.jpg', '/image/projects/CZ4.jpg', '/image/projects/CZ5.jpg', '/image/projects/CZ6.jpg', '/image/projects/CZ7.jpg', '/image/projects/CZ8.jpg', '/image/projects/CZ9.jpg', '/image/projects/CZ10.jpg', '/image/projects/CZ11.jpg', '/image/projects/CZ12.jpg'],
+      promo: '/image/projects/CZ3.jpg',
+      images: ['/image/projects/CZ3.jpg', '/image/projects/CZ1.jpg', '/image/projects/CZ2.jpg', '/image/projects/CZ4.jpg', '/image/projects/CZ5.jpg', '/image/projects/CZ6.jpg', '/image/projects/CZ7.jpg', '/image/projects/CZ8.jpg', '/image/projects/CZ9.jpg', '/image/projects/CZ10.jpg', '/image/projects/CZ11.jpg', '/image/projects/CZ12.jpg'],
       technologies: ['jquery', 'laravel']
     },
     {
@@ -48,6 +48,22 @@ export const state = () => ({
       promo: '/image/projects/MD1.jpg',
       images: ['/image/projects/MD1.jpg', '/image/projects/MD2.jpg', '/image/projects/MD3.jpg', '/image/projects/MD4.jpg', '/image/projects/MD5.jpg'],
       technologies: ['vuejs', 'nuxtjs', 'php']
+    },
+    {
+      id: '4',
+      title: '100Project',
+      description: 'Construction company site',
+      promo: '/image/projects/100P1.jpg',
+      images: ['/image/projects/100P1.jpg', '/image/projects/100P2.jpg', '/image/projects/100P3.jpg', '/image/projects/100P3.jpg', '/image/projects/100P4.jpg', '/image/projects/100P5.jpg', '/image/projects/100P6.jpg', '/image/projects/100P7.jpg'],
+      technologies: ['vuejs', 'php']
+    },
+    {
+      id: '5',
+      title: 'ProGloves',
+      description: 'Medical glove site',
+      promo: '/image/projects/PG1.jpg',
+      images: ['/image/projects/PG1.jpg', '/image/projects/PG2.jpg', '/image/projects/PG3.jpg', '/image/projects/PG4.jpg', '/image/projects/PG5.jpg'],
+      technologies: ['vuejs', 'php']
     }
   ],
   tools: [
