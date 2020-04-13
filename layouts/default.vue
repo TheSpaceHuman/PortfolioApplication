@@ -15,6 +15,9 @@
   export default {
     components: {
       TheHeader, TheFooter
+    },
+    metaInfo: {
+      base: { href: '/' }
     }
   }
 </script>

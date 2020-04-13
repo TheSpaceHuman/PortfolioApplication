@@ -99,6 +99,16 @@
               return el.link === '/blog'
             }).key
             break;
+          case 'profile-login':
+            this.activeItem = this.items.find((el) => {
+              return el.link === '/profile'
+            }).key
+            break;
+          case 'profile-registration':
+            this.activeItem = this.items.find((el) => {
+              return el.link === '/profile'
+            }).key
+            break;
           default:
             this.activeItem = '1'
         }
