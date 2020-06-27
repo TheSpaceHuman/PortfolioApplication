@@ -63,6 +63,7 @@ section, .section {
   padding: 0 15px;
 }
 
+@import "./modules/layout";
 @import "./modules/header";
 @import "./modules/main";
 @import "./modules/footer";
