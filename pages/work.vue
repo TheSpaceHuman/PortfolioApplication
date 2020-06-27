@@ -1,5 +1,6 @@
 <template>
   <section class="page-work">
+    <img class="img-background" src="/image/login/wave.png">
     <div class="container">
       <h1 class="h1 text-center py-30">Work</h1>
       <p class="h4 text-center">If you want to offer me a job, I’m happy to hear.</p>

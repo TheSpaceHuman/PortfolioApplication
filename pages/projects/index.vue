@@ -1,5 +1,6 @@
 <template>
     <section class="page-projects">
+      <img class="img-background" src="/image/login/wave.png">
       <div class="container">
         <h1 class="h1 text-center py-30">Projects</h1>
         <p class="h4 text-center">Here are all my completed projects of varying complexity.</p>

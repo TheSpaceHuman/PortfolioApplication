@@ -3,12 +3,10 @@ export const state = () => ({
     { name: 'Main', link: '/', key: '1', icon: 'el-icon-house' },
     { name: 'Projects', link: '/projects', key: '2', icon: 'el-icon-folder' },
     { name: 'Demo', link: '/demo', key: '3', icon: 'el-icon-data-board' },
-    { name: 'Components', link: '/components', key: '4', icon: 'el-icon-menu' },
-    { name: 'Blog', link: '/blog', key: '5', icon: 'el-icon-postcard' },
-    { name: 'Tools', link: '/tools', key: '6', icon: 'el-icon-s-tools' },
-    { name: 'Inspiration', link: '/inspiration', key: '7', icon: 'el-icon-star-on' },
-    { name: 'Work', link: '/work', key: '8', icon: 'el-icon-office-building' },
-    { name: 'Profile', link: '/profile', key: '9', icon: 'el-icon-user' }
+    { name: 'Blog', link: '/blog', key: '4', icon: 'el-icon-postcard' },
+    { name: 'Tools', link: '/tools', key: '5', icon: 'el-icon-s-tools' },
+    { name: 'Work', link: '/work', key: '6', icon: 'el-icon-office-building' },
+    { name: 'Profile', link: '/profile', key: '7', icon: 'el-icon-user' }
   ],
   technologies: [
     { name: 'HTML & CSS', image: '/image/tehnologyies/1425632648_html5-css3.png', href: 'https://www.w3.org/standards/webdesign/htmlcss' },
@@ -76,7 +74,8 @@ export const state = () => ({
     { title: 'WebDev', subTitle: 'Web assistant', image: '/image/tools/webdev.png', link: {target: '_blank', href: 'https://web.dev/'}},
   ],
   demos: [
-    { title: 'VueMicroServices', image: '/image/projects/MD1.jpg', href: 'https://github.com/TheSpaceHuman/VueMicroServices', technologies: ['vuejs', 'nuxtjs', 'laravel']  }
+    { title: 'VueMicroServices', image: '/image/projects/MD1.jpg', href: 'https://github.com/TheSpaceHuman/VueMicroServices', technologies: ['vuejs', 'nuxtjs', 'laravel'] },
+    { title: 'NgShop', image: '/image/projects/MD1.jpg', href: 'https://github.com/TheSpaceHuman/tasks-ng', technologies: ['angular'] },
   ]
 })
 
@@ -89,8 +88,6 @@ export const getters = {
   technologies: (state) => state.technologies,
   projects: (state) => state.projects,
   tools: (state) => state.tools,
-  getProjectById: state => id => {
-    return state.projects.find((el) => el.id === id)
-  },
+  getProjectById: state => id => state.projects.find((el) => el.id === id),
   demos: state => state.demos
 }
