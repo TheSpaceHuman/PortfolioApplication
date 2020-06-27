@@ -4,13 +4,13 @@
     >
       <div class="main-menu__mobile-wrapper"
            v-if="mobile"
+           @click="toggleMenu"
            :class="{'is-active': activeHamburger}"
       >
         <button
           class="hamburger hamburger--collapse"
           :class="{'is-active': activeHamburger}"
-          type="button"
-          @click="toggleHamburger">
+          type="button">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
@@ -28,23 +28,28 @@
               :class="{'is-active': $route.path === item.link}"
               v-for="(item, key) in items"
               :key="key"
-              @click="hideMobileMenu"
             >
-              <nuxt-link :to="item.link" class="main-menu__mobile-link"><i v-if="item.icon" :class="item.icon" /> {{item.name}}</nuxt-link>
+              <nuxt-link :to="item.link" class="main-menu__mobile-link">
+                <i v-if="item.icon" :class="item.icon" /> {{item.name}}
+              </nuxt-link>
             </li>
           </ul>
         </transition>
 
       </div>
       <el-menu :default-active="activeItem" class="main-menu__items" mode="horizontal" v-else>
-        <nuxt-link to="/" class="main-menu__item-logo"><svg-icon name="moon"></svg-icon></nuxt-link>
+        <nuxt-link to="/" class="main-menu__item-logo">
+          <svg-icon name="moon"></svg-icon>
+        </nuxt-link>
         <el-menu-item
           class="main-menu__item"
           v-for="item in items"
           :key="item.key"
           :index="item.key"
         >
-          <nuxt-link :to="item.link" class="main-menu__item-link"><i v-if="item.icon" :class="item.icon" />{{item.name}}</nuxt-link>
+          <nuxt-link :to="item.link" class="main-menu__item-link">
+            <i v-if="item.icon" :class="item.icon" />{{item.name}}
+          </nuxt-link>
         </el-menu-item>
       </el-menu>
     </nav>
@@ -67,7 +72,6 @@
       return {
         activeItem: '1',
         activeHamburger: false,
-
       }
     },
     methods: {
@@ -81,37 +85,32 @@
          this.switchActiveRoute()
         }
       },
-      toggleHamburger() {
+      toggleMenu() {
         this.activeHamburger = !this.activeHamburger
-      },
-      hideMobileMenu() {
-        this.activeHamburger = false
       },
       switchActiveRoute() {
         switch (this.$route.name) {
           case 'projects-id':
-            this.activeItem = this.items.find((el) => {
-              return el.link === '/projects'
-            }).key
+            this.setActiveRoute('/projects');
             break;
           case 'blog-id':
-            this.activeItem = this.items.find((el) => {
-              return el.link === '/blog'
-            }).key
+            this.setActiveRoute('/blog');
             break;
           case 'profile-login':
-            this.activeItem = this.items.find((el) => {
-              return el.link === '/profile'
-            }).key
+            this.setActiveRoute('/profile');
             break;
           case 'profile-registration':
-            this.activeItem = this.items.find((el) => {
-              return el.link === '/profile'
-            }).key
+            this.setActiveRoute('/profile');
             break;
           default:
             this.activeItem = '1'
         }
+      },
+      setActiveRoute(path) {
+        this.activeItem = this.items.find((el) => el.link === path).key
+      },
+      closeMenu(event) {
+        console.debug(event)
       }
     },
     mounted() {
@@ -145,10 +144,12 @@
       border-color: transparent;
     }
     &__item {
+      padding: 0;
       &-link {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        padding: 0 20px;
       }
       &-logo {
         display: flex;
@@ -158,12 +159,19 @@
           margin: 0 20px;
           width: 40px;
           height: 40px;
-          fill: $secondary-color;
+          fill: $primary-color;
+          transition: fill 500ms ease-in-out;
+        }
+        &:hover {
+          svg {
+            fill: $secondary-color;
+          }
         }
       }
     }
     &__mobile-items {
       max-width: 320px;
+      min-width: 280px;
       font-size: 21px;
       display: block;
       position: fixed;
@@ -171,8 +179,8 @@
       top: 0;
       bottom: 0;
       padding: 45px 30px;
-      background-color:  $secondary-color;
-      color: $tertiary-color;
+      background-color: $tertiary-color;
+      color: $secondary-color;
       z-index: 999;
     }
     &__mobile-wrapper {
@@ -193,7 +201,6 @@
     }
 
     &__mobile-item {
-      /*border-bottom: 1px solid transparent;*/
       margin-bottom: 12px;
       &.is-active {
         color: $primary-color;

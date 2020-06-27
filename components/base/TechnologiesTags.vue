@@ -1,6 +1,11 @@
 <template>
     <div class="technologies-tags">
-      <span class="technologies-tags__tag" v-for="technology in items" :key="technology" :class="`${technology}--color`">#{{technology}}</span>
+      <span class="technologies-tags__tag"
+            v-for="technology in items"
+            :key="technology"
+            :class="`${technology}--color`">
+        #{{technology}}
+      </span>
     </div>
 </template>
 

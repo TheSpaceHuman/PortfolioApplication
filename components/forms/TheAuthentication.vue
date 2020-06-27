@@ -1,6 +1,5 @@
 <template>
   <div class="the-authentication">
-    <img class="wave" src="/image/login/wave.png">
     <div class="container">
       <div class="img">
         <img src="/image/login/bg.svg">
@@ -10,7 +9,7 @@
           <div class="d-flex justify-content-center">
             <img class="avatar" src="/image/login/avatar.svg">
           </div>
-          <h2 class="title">Welcome</h2>
+          <h2 class="title">{{ title }}</h2>
           <el-form-item :label="field.label" :prop="field.name" v-for="field in fields" :key="field.name">
             <el-input
               v-if="field.type === 'password'"
@@ -65,7 +64,16 @@
     data() {
       return {
         form: {},
-        rules: {}
+        rules: {},
+        dictionary: {
+          login: 'Login',
+          registration: 'Registration'
+        }
+      }
+    },
+    computed: {
+      title() {
+        return this.dictionary[this.type]
       }
     },
     methods: {

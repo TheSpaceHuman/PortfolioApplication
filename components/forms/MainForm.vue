@@ -125,6 +125,7 @@
     border: 1px solid $primary-color;
     border-radius: 15px;
     padding: 15px;
+    background-color: $light-color;
     .form-label {
       display: inline-block;
       margin-bottom: 8px;

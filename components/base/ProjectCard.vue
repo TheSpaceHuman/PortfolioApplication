@@ -3,7 +3,7 @@
       <el-card shadow="hover" class="project-card">
         <img :src="image" :alt="title" class="project-card__image" />
         <h4 class="project-card__title">{{title}}</h4>
-        <div class="project-card__technologies" v-if="technologies">
+        <div class="project-card__technologies" v-if="technologies.length > 0">
           <TechnologiesTags :items="technologies" />
         </div>
       </el-card>
