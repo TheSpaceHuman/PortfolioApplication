@@ -6,13 +6,6 @@
           <el-col :xs="field.grid ? field.grid.xs : 24" :sm="field.grid ? field.grid.sm : 24" :md="field.grid ? field.grid.md : 24" :lg="field.grid ? field.grid.lg : 24" class="mb-15" v-for="field in fields" :key="field.name">
             <el-form-item :label="field.label" :prop="field.name">
               <el-input v-if="field.mask" :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" v-mask="field.mask" />
-              <vue-phone-number-input
-                v-model="form[field.name]"  v-else-if="field.type === 'tel'"
-                color="#00e0a1"
-                valid-color="#26df82"
-                error-color="#ec3532"
-                :only-countries="countries"
-              ></vue-phone-number-input>
               <el-select  v-else-if="field.type === 'select'" v-model="form[field.name]" :placeholder="field.placeholder" class="w-100">
                 <el-option
                   v-for="item in field.options"
@@ -21,7 +14,7 @@
                   :value="item.value">
                 </el-option>
               </el-select>
-              <TheUploader v-else-if="field.type === 'file'" />
+              <TheUploader v-else-if="field.type === 'file'" :message="field.message" :button-title="field.button" />
               <el-input v-else-if="field.type === 'money'" :placeholder="field.placeholder" type="text" :id="field.name" v-model="form[field.name]" suffix-icon="fas fa-dollar-sign" />
               <el-input v-else :placeholder="field.placeholder" :type="field.type" :id="field.name" v-model="form[field.name]" :autosize="field.autosize" />
             </el-form-item>
@@ -72,7 +65,6 @@
           'justify-content-start': this.buttonAlight === 'left',
           'justify-content-end': this.buttonAlight === 'right',
         },
-        countries: ['RU', 'UA', 'KZ', 'BY']
       }
     },
     created() {

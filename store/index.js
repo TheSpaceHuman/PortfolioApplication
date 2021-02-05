@@ -1,12 +1,12 @@
 export const state = () => ({
   menu: [
-    { name: 'Main', link: '/', key: '1', icon: 'el-icon-house' },
-    { name: 'Projects', link: '/projects', key: '2', icon: 'el-icon-folder' },
-    { name: 'Demo', link: '/demo', key: '3', icon: 'el-icon-data-board' },
-    { name: 'Blog', link: '/blog', key: '4', icon: 'el-icon-postcard' },
-    { name: 'Tools', link: '/tools', key: '5', icon: 'el-icon-s-tools' },
-    { name: 'Work', link: '/work', key: '6', icon: 'el-icon-office-building' },
-    { name: 'Profile', link: '/profile', key: '7', icon: 'el-icon-user' }
+    { name: 'navigation.main', link: '/', key: '1', icon: 'el-icon-house' },
+    { name: 'navigation.projects', link: '/projects', key: '2', icon: 'el-icon-folder' },
+    // { name: 'navigation.demo', link: '/demo', key: '3', icon: 'el-icon-data-board' },
+    // { name:'navigation.blog', link: '/blog', key: '4', icon: 'el-icon-postcard' },
+    { name: 'navigation.tools', link: '/tools', key: '5', icon: 'el-icon-s-tools' },
+    { name: 'navigation.work', link: '/work', key: '6', icon: 'el-icon-office-building' },
+    // { name:'navigation.profile', link: '/profile', key: '7', icon: 'el-icon-user' }
   ],
   technologies: [
     { name: 'HTML & CSS', image: '/image/tehnologyies/1425632648_html5-css3.png', href: 'https://www.w3.org/standards/webdesign/htmlcss' },
@@ -26,7 +26,7 @@ export const state = () => ({
     {
       id: '1',
       title: 'Homeartidea',
-      description: 'Interior design studio',
+      description: 'projects.projects.1',
       promo: '/image/projects/HA1.jpg',
       images: ['/image/projects/HA1.jpg', '/image/projects/HA2.jpg', '/image/projects/HA3.jpg', '/image/projects/HA4.jpg', '/image/projects/HA5.jpg', '/image/projects/HA6.jpg', '/image/projects/HA7.jpg'],
       technologies: ['jquery', 'laravel']
@@ -34,7 +34,7 @@ export const state = () => ({
     {
       id: '2',
       title: 'CRM for z-clinic',
-      description: 'CRM for internal use, staff training and the establishment of business processes of the system',
+      description: 'projects.projects.2',
       promo: '/image/projects/CZ3.jpg',
       images: ['/image/projects/CZ3.jpg', '/image/projects/CZ1.jpg', '/image/projects/CZ2.jpg', '/image/projects/CZ4.jpg', '/image/projects/CZ5.jpg', '/image/projects/CZ6.jpg', '/image/projects/CZ7.jpg', '/image/projects/CZ8.jpg', '/image/projects/CZ9.jpg', '/image/projects/CZ10.jpg', '/image/projects/CZ11.jpg', '/image/projects/CZ12.jpg'],
       technologies: ['jquery', 'laravel']
@@ -42,7 +42,7 @@ export const state = () => ({
     {
       id: '3',
       title: 'MirDit',
-      description: 'The main site of the company IT Data World',
+      description: 'projects.projects.3',
       promo: '/image/projects/MD1.jpg',
       images: ['/image/projects/MD1.jpg', '/image/projects/MD2.jpg', '/image/projects/MD3.jpg', '/image/projects/MD4.jpg', '/image/projects/MD5.jpg'],
       technologies: ['vuejs', 'nuxtjs', 'php']
@@ -50,7 +50,7 @@ export const state = () => ({
     {
       id: '4',
       title: '100Project',
-      description: 'Construction company site',
+      description: 'projects.projects.4',
       promo: '/image/projects/100P1.jpg',
       images: ['/image/projects/100P1.jpg', '/image/projects/100P2.jpg', '/image/projects/100P3.jpg', '/image/projects/100P3.jpg', '/image/projects/100P4.jpg', '/image/projects/100P5.jpg', '/image/projects/100P6.jpg', '/image/projects/100P7.jpg'],
       technologies: ['vuejs', 'php']
@@ -58,7 +58,7 @@ export const state = () => ({
     {
       id: '5',
       title: 'ProGloves',
-      description: 'Medical glove site',
+      description: 'projects.projects.5',
       promo: '/image/projects/PG1.jpg',
       images: ['/image/projects/PG1.jpg', '/image/projects/PG2.jpg', '/image/projects/PG3.jpg', '/image/projects/PG4.jpg', '/image/projects/PG5.jpg'],
       technologies: ['vuejs', 'php']

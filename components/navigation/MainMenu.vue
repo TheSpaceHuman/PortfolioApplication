@@ -30,7 +30,7 @@
               :key="key"
             >
               <nuxt-link :to="item.link" class="main-menu__mobile-link">
-                <i v-if="item.icon" :class="item.icon" /> {{item.name}}
+                <i v-if="item.icon" :class="item.icon" /> {{ $t(item.name) }}
               </nuxt-link>
             </li>
           </ul>
@@ -48,7 +48,7 @@
           :index="item.key"
         >
           <nuxt-link :to="item.link" class="main-menu__item-link">
-            <i v-if="item.icon" :class="item.icon" />{{item.name}}
+            <i v-if="item.icon" :class="item.icon" /> {{ $t(item.name) }}
           </nuxt-link>
         </el-menu-item>
       </el-menu>
@@ -133,11 +133,14 @@
     z-index: 6;
   }
   .main-menu {
+
     a {
       font-size: inherit;
       color: inherit;
     }
-
+    &__mobile-link {
+      display: block;
+    }
     &__items {
       display: flex;
       justify-content: center;
@@ -179,7 +182,7 @@
       top: 0;
       bottom: 0;
       padding: 45px 30px;
-      background-color: $tertiary-color;
+      background-color: $primary-color;
       color: $secondary-color;
       z-index: 999;
     }
@@ -203,11 +206,11 @@
     &__mobile-item {
       margin-bottom: 12px;
       &.is-active {
-        color: $primary-color;
-        border-color: $primary-color;
+        color: $tertiary-color;
+        border-color: $tertiary-color;
       }
       &:hover {
-        color: $primary-color;
+        color: $tertiary-color;
       }
     }
 

@@ -4,10 +4,10 @@
       <div class="container">
         <div class="d-flex align-items-center">
           <BackButton class="mr-20" />
-          <h1 class="h1 color--secondary project-detail__title">{{project.title}}</h1>
+          <h1 class="h1 color--secondary project-detail__title">{{ project.title }}</h1>
         </div>
 
-        <p class="project-detail__description">{{project.description}}</p>
+        <p class="project-detail__description">{{ this.$t(project.description) }}</p>
       </div>
       <el-carousel type="card" height="600px" class="project-detail__carousel" :autoplay="false" trigger="click">
         <el-carousel-item v-for="(image, key) in project.images" :key="key">

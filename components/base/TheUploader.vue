@@ -4,8 +4,8 @@
       ref="upload"
       action="/"
       :auto-upload="false">
-      <el-button slot="trigger" size="small" type="primary">{{buttonTitle}}</el-button>
-      <div class="el-upload__tip" slot="tip">{{message}}</div>
+      <el-button slot="trigger" size="small" type="primary">{{ buttonTitle }}</el-button>
+      <div class="el-upload__tip" slot="tip">{{ message }}</div>
     </el-upload>
   </div>
 </template>

@@ -35,7 +35,7 @@
         fields: [
           {label: 'Name company', name: 'name-company', placeholder: 'Name company', type: 'text', required: true, grid: {xs: 24, md: 24, lg: 24 }},
           {label: 'Email company', name: 'email', placeholder: 'Email', type: 'email', grid: {xs: 24, md: 12, lg: 12 }},
-          {label: 'Phone company', name: 'phone', placeholder: 'Phone', type: 'tel', grid: {xs: 24, md: 12, lg: 12 }},
+          {label: 'Phone company', name: 'phone', placeholder: 'Phone', type: 'text', mask: '+ # (###)-###-##-##', grid: {xs: 24, md: 12, lg: 12 }},
           {label: 'Position', name: 'position', placeholder: 'Position', type: 'text', required: true, grid: {xs: 24, md: 24, lg: 24 }},
           {label: 'Salary', name: 'salary', placeholder: 'Salary', type: 'money', required: true, grid: {xs: 24, md: 24, lg: 24 }},
           {label: 'Message', name: 'message', placeholder: 'Message', type: 'textarea', required: true, autosize:{ minRows: 5, maxRows: 15}, grid: {xs: 24, md: 24, lg: 24 }}

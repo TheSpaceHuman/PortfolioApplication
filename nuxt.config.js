@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -25,7 +24,6 @@ export default {
   */
   css: [
     '@assets/scss/style.scss',
-    '@node_modules/vue-phone-number-input/dist/vue-phone-number-input.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -38,7 +36,6 @@ export default {
     '@plugins/vue-scrollto',
     '@plugins/vue-the-mask',
     '@plugins/vuelidate',
-    '@plugins/vue-phone-number-input',
   ],
   /*
   ** Nuxt.js dev-modules
@@ -53,6 +50,27 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/svg-sprite',
+    [
+      'nuxt-i18n',
+      {
+        locales: [{code: 'en', file: 'en.js'}, {code: 'ru', file: 'ru.js'}],
+        lazy: true,
+        langDir: 'i18n/',
+        defaultLocale: 'en',
+        detectBrowserLanguage: {
+          alwaysRedirect: false,
+          fallbackLocale: 'en',
+          onlyOnRoot: true,
+          onlyOnNoPrefix: false,
+          useCookie: true,
+          cookieKey: 'i18n_redirected',
+          cookieDomain: null,
+          cookieCrossOrigin: true,
+          cookieSecure: false,
+        },
+        strategy: 'no_prefix',
+      }
+    ],
   ],
   /*
  ** svgSprite module configuration

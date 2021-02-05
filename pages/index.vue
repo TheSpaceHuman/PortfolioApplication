@@ -2,16 +2,16 @@
   <section class="page-index">
     <div class="container">
       <div class="page-index__block-1 my-50">
-        <p class="h5 text-center">Welcome</p>
-        <h2 class="h2 text-center">I'm Artem - frontend developer</h2>
-        <p class="h3 text-center">I am {{ new Date().getFullYear() - 1997 }} years old, I live in Moscow and I really love my job</p>
+        <p class="h5 text-center">{{ $t('index.greeting') }}</p>
+        <h2 class="h2 text-center">{{ $t('index.me') }}</h2>
+        <p class="h3 text-center">{{ $t('index.about') }}</p>
         <div class="d-flex justify-content-center p-20">
           <svg-icon name="planet" width="250px" height="250px"></svg-icon>
         </div>
       </div>
     </div>
     <section class="bg--primary p-50 page-index__block-2">
-      <h2 class="h2 text-center mb-30">Technologies that I use in my work</h2>
+      <h2 class="h2 text-center mb-30">{{ $t('index.technology') }}</h2>
       <el-row>
         <el-col :sm="24" :md="12" :lg="4" v-for="technology in technologies" :key="technology.name">
           <TechnologyCard :name="technology.name" :href="technology.href" :image="technology.image" />
@@ -19,10 +19,10 @@
       </el-row>
     </section>
     <section class="p-50 page-index__block-3">
-      <GitHubRepositories />
+      <GitHubRepositories :collapse="$t('index.github.collapse')" :expand="$t('index.github.expand')" :description="$t('index.github.description')" />
     </section>
     <section class="p-50 page-index__block-4">
-      <MainForm title="Personal feedback" :fields="fields" buttonTitle="Send" path="/"/>
+      <MainForm :title="$t('index.feedback.title')" :fields="fields" :buttonTitle="$t('index.feedback.submit')" path="/"/>
     </section>
   </section>
 
@@ -42,10 +42,10 @@ export default {
   data() {
     return {
       fields: [
-        {label: 'Name', name: 'name', mask: '', placeholder: 'Name', type: 'text', required: true},
-        {label: 'Email', name: 'email', mask: '', placeholder: 'Email', type: 'email', required: true},
-        {label: 'Phone', name: 'phone', placeholder: 'Phone', type: 'tel'},
-        {label: 'Message', name: 'message', mask: '', placeholder: 'Message', type: 'textarea', autosize:{ minRows: 5, maxRows: 15}, required: true}
+        {label: this.$t('index.feedback.name'), name: 'name', mask: '', placeholder: this.$t('index.feedback.name'), type: 'text', required: true},
+        {label: this.$t('index.feedback.email'), name: 'email', mask: '', placeholder: this.$t('index.feedback.email'), type: 'email', required: true},
+        {label: this.$t('index.feedback.phone'), name: 'phone', placeholder: this.$t('index.feedback.phone'), type: 'text', mask: '+ # (###)-###-##-##'},
+        {label: this.$t('index.feedback.message'), name: 'message', mask: '', placeholder: this.$t('index.feedback.message'), type: 'textarea', autosize:{ minRows: 5, maxRows: 15}, required: true}
       ]
     }
   },
