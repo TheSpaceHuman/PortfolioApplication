@@ -49,7 +49,7 @@
 
 <style scoped lang="scss">
 .project-detail {
-  padding-top: 50px; // test
+  padding-top: 50px;
   padding-bottom: 50px;
   min-height: 300px;
   &__carousel {}

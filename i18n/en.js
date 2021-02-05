@@ -58,4 +58,28 @@ export default {
       submit: "Submit an order for review",
     }
   },
+  tools: {
+    title: "Tools",
+    description: "Here are auxiliary tools that I often use",
+    tools: ["SVG compression", "Image compression", "Color combination", "Browser support", "SVG sprite generation", "Web Performance Monitoring", "Web assistant"]
+  },
+  work: {
+    title: "Work",
+    description: "If you want to offer me a job, I’m happy to hear",
+    resume: "My resumes",
+    feedback: {
+      title: "Work feedback",
+      nameCompany: "Name company",
+      email: "Email company",
+      phone: "Phone company",
+      position: "Position",
+      salary: "Salary",
+      message: "Message",
+      submit: "Send an invitation"
+    }
+  },
+  footer: {
+    copyright: "Copyright",
+    developed: "Developed with the help of"
+  }
 }
