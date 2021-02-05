@@ -12,7 +12,7 @@
       </div>
     </footer>
   </template>
-F
+
   <script>
     import CONTACTS from '@/dictionary/contact'
     export default {
