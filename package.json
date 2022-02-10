@@ -28,7 +28,7 @@
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^10.1.1"
   }
 }
